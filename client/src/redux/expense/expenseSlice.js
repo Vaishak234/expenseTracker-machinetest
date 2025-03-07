@@ -20,7 +20,7 @@ const expenseSlice = createSlice({
             localStorage.setItem('expenses',JSON.stringify(newState))
         },
         setExpense: (state) => {
-            const initialData = JSON.parse(localStorage.getItem('expenses'))
+            const initialData = JSON.parse(localStorage.getItem('expenses')) || []
             state.expenses = initialData
         }
     }
@@ -29,7 +29,7 @@ const expenseSlice = createSlice({
 export const selectExpense = (state) => state.expense.expenses;
 export const selectTotalAmount = createSelector(
   [selectExpense],
-  (expenses) => expenses.reduce((total, expense) => total + expense.amount, 0)
+  (expenses) => expenses?.reduce((total, expense) => total + expense.amount, 0)
 );
 export const { addExpense, removeExpense, setExpense } = expenseSlice.actions;
 export default expenseSlice.reducer;
