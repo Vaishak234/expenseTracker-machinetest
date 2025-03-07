@@ -12,7 +12,7 @@ const expenseSlice = createSlice({
         addExpense: (state, action) => {
             const newExpense ={ id: uuid(), ...action.payload }
             state.expenses.push(newExpense);
-            localStorage.setItem('expenses',JSON.stringify([...state.expenses , newExpense]))
+            localStorage.setItem('expenses',JSON.stringify([...state.expenses ]))
         },
         removeExpense: (state, action) => {
             const newState = state.expenses.filter(expense => expense.id !== action.payload);
