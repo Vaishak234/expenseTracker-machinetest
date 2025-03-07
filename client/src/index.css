@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  @apply text-gray-900 bg-white 
+
+}
+
+.dark{
+  @apply bg-gray-900 text-white
+}
+
+dark:border-gray-700
+dark:bg-gray-800
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
